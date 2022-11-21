@@ -8,5 +8,4 @@ function pregetAllwabli(param) {
   f3param.push(param[0])
   return f3param;
 }
-module.export= {pregetAllmunicipality}
 module.exports = {pregetproject, pregetAllproject} 
