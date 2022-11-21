@@ -7,8 +7,7 @@ function pregetAllwabli(param) {
   const f3param = [];
  
  
- let f3param = param.filter(function(person) {
-	return person.wtitle == "1234")
+ let f3param = param.filter(function(person) {return person.wtitle == "1234"})
  
   return f3param;
 }
