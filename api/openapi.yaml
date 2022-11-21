@@ -1,0 +1,161 @@
+openapi: 3.0.1
+info:
+  contact:
+    email: lampralexandros@gmail.com
+  description: This is a sample openApi document
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: https://wabli.netlify.app/
+  title: TempApi
+  version: 1.0.0
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+servers:
+- description: local-host
+  url: http://localhost:8090/v1
+security:
+- {}
+tags:
+- description: not yet ready
+  name: wabli
+paths:
+  /wabli:
+    post:
+      operationId: createwabli
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/wabli'
+        description: data to be created
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/wabli'
+          description: successful operation
+      summary: Creates the data
+      tags:
+      - wabli
+      x-eov-operation-handler: controllers/WabliController
+  /wabli/{wabliId}:
+    delete:
+      operationId: deletewabli
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: wabliId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: successful operation
+      summary: Delete the element
+      tags:
+      - wabli
+      x-eov-operation-handler: controllers/WabliController
+    get:
+      operationId: getwabli
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: wabliId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/wabli'
+          description: successful operation
+      summary: Get the element
+      tags:
+      - wabli
+      x-eov-operation-handler: controllers/WabliController
+    put:
+      operationId: updatewabli
+      parameters:
+      - description: the Id parameter
+        explode: false
+        in: path
+        name: wabliId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/wabli'
+        description: data to be updated
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/wabli'
+          description: successful operation
+      summary: Updates the element
+      tags:
+      - wabli
+      x-eov-operation-handler: controllers/WabliController
+  /wabli/getAll:
+    get:
+      operationId: getAllwabli
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/wabli'
+                type: array
+          description: successful operation
+      summary: Get all the data
+      tags:
+      - wabli
+      x-method-getAll: "true"
+      x-eov-operation-handler: controllers/WabliController
+components:
+  schemas:
+    wabli:
+      example:
+        wtitle: wtitle
+        _id: _id
+        wimage:
+          data: data
+          name: name
+      properties:
+        _id:
+          type: string
+        wimage:
+          $ref: '#/components/schemas/wabli_wimage'
+        wtitle:
+          type: string
+      required:
+      - wimage
+      - wtitle
+      type: object
+    wabli_wimage:
+      example:
+        data: data
+        name: name
+      properties:
+        data:
+          type: string
+        name:
+          type: string
+      type: object
+      x-isSchemaOnly: "true"
