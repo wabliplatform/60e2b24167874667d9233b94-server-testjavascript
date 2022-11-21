@@ -4,8 +4,8 @@
   */
 function pregetAllwabli(param) {
   // insert code here
-  const f3param = [] ;
-  f3param.push(param[0])
-  return f3param;
+  const param = [] ;
+  param.push(param[0])
+  return param;
 }
 module.exports = {pregetproject, pregetAllproject} 
