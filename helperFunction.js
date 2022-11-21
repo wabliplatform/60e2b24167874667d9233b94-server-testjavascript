@@ -7,7 +7,7 @@ function pregetAllwabli(param) {
   const f3param = [];
  
  
-  f3param.push(param.wtitle="1234")
+  f3param.filter(param.wtitle="1234")
  
   return f3param;
 }
