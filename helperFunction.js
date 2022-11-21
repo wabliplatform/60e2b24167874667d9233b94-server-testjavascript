@@ -5,7 +5,7 @@
 function pregetAllwabli(param) {
   // insert code here
   const f3param = [];
-  f3param.wname =="1234";
+  f3param.wtitle =="1234";
   return f3param;
 }
 module.exports = {pregetAllwabli} 
