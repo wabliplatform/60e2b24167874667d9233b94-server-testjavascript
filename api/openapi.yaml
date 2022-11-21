@@ -138,7 +138,6 @@ paths:
           f3param.push(param[0])
           return f3param;
         }
-        module.export= {pregetAllmunicipality}
       x-custom-code-prefix: pre
       x-eov-operation-handler: controllers/WabliController
 components:
