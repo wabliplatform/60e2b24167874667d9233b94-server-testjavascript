@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 const Service = require('./Service');
 const { Wabli } = require('../models/Wabli');
+const { pregetAllwabli } = require('../helperFunction');
 
 /**
 * Creates the data
@@ -52,6 +53,7 @@ const getAllwabli = () => new Promise(
     try {
       let query = {}
       query = await Wabli.find().exec();
+      query = pregetAllwabli(query);
       // this is a test
       resolve(Service.successResponse(query));
     } catch (e) {
